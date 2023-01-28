@@ -22,10 +22,15 @@ const customStyles = {
 
 function SampleModal() {
   let subtitle;
-  const [modalIsOpen, setIsOpen] = useState(false);
 
-  function openModal() {
-    setIsOpen(true);
+  // const [modalIsOpen, setIsOpen] = useState(false);
+
+  const ModalList = ['モーダル１', 'モーダル２', 'モーダル３']
+  const [selectedItem, setSelectedItem] = useState('')
+
+  function openModal(name) {
+    setSelectedItem(name)
+    // setIsOpen(true);
   }
 
   function afterOpenModal() {
@@ -34,28 +39,37 @@ function SampleModal() {
   }
 
   function closeModal() {
-    setIsOpen(false);
+    setSelectedItem(false)
+    // setIsOpen(false);
   }
 
   return (
-    <div>
-      <button onClick={openModal}>Open Modal</button>
-      <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-      >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello Modal</h2>
-        <button onClick={closeModal}>close</button>
-        <div>モーダル</div>
-        <form>
-          <input />
-        </form>
-      </Modal>
-    </div>
-  );
+    <>
+      {
+        ModalList.map((item) => {
+          return (
+            <>
+              <button onClick={() => { openModal(item) }}>{item}</button>
+              <Modal
+                isOpen={item === selectedItem}
+                onAfterOpen={afterOpenModal}
+                onRequestClose={closeModal}
+                style={customStyles}
+                contentLabel="Example Modal"
+              >
+                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello Modal</h2>
+                <button onClick={closeModal}>close</button>
+                <div>{selectedItem}</div>
+                <form>
+                  <input />
+                </form>
+              </Modal>
+            </>
+          )
+        })
+      }
+    </>
+  )
 }
 
 export default SampleModal;
