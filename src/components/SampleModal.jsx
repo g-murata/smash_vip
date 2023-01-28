@@ -2,7 +2,15 @@ import Modal from 'react-modal';
 import { useState } from 'react';
 
 const customStyles = {
+  overlay: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    backgroundColor: "rgba(0,0,0,0.60)"
+  },
   content: {
+    height: '70%',
+    width: '60%',
     top: '50%',
     left: '50%',
     right: 'auto',
