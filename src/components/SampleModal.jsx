@@ -40,7 +40,7 @@ function SampleModal() {
   }
 
   return (
-    <>
+    <div style={{ display: 'flex' }}>
       {
         ModalList.map((item) => {
           return (
@@ -64,7 +64,7 @@ function SampleModal() {
           )
         })
       }
-    </>
+    </div>
   )
 }
 
