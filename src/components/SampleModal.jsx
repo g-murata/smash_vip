@@ -23,14 +23,11 @@ const customStyles = {
 function SampleModal() {
   let subtitle;
 
-  // const [modalIsOpen, setIsOpen] = useState(false);
-
   const ModalList = ['モーダル１', 'モーダル２', 'モーダル３']
   const [selectedItem, setSelectedItem] = useState('')
 
   function openModal(name) {
     setSelectedItem(name)
-    // setIsOpen(true);
   }
 
   function afterOpenModal() {
@@ -40,7 +37,6 @@ function SampleModal() {
 
   function closeModal() {
     setSelectedItem(false)
-    // setIsOpen(false);
   }
 
   return (
@@ -57,7 +53,7 @@ function SampleModal() {
                 style={customStyles}
                 contentLabel="Example Modal"
               >
-                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello Modal</h2>
+                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello Modal{item}</h2>
                 <button onClick={closeModal}>close</button>
                 <div>{selectedItem}</div>
                 <form>
