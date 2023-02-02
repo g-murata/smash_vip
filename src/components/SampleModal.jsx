@@ -26,8 +26,8 @@ function SampleModal() {
   const ModalList = ['モーダル１', 'モーダル２', 'モーダル３']
   const [selectedItem, setSelectedItem] = useState('')
 
-  function openModal(name) {
-    setSelectedItem(name)
+  function openModal(item) {
+    setSelectedItem(item)
   }
 
   function afterOpenModal() {
