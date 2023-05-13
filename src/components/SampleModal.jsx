@@ -1,6 +1,9 @@
 import Modal from 'react-modal';
 import { useState } from 'react';
 
+import Characters from './../characters.json';
+const characters = Characters.data;
+
 const customStyles = {
   overlay: {
     position: "fixed",
@@ -40,12 +43,12 @@ function SampleModal() {
   }
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div>
       {
-        ModalList.map((item) => {
+        Object.keys(characters).map((item) => {
           return (
             <>
-              <button onClick={() => { openModal(item) }}>{item}</button>
+              <button onClick={() => { openModal(item) }}>{characters[item].name}</button>
               <Modal
                 isOpen={item === selectedItem}
                 onAfterOpen={afterOpenModal}
@@ -53,12 +56,12 @@ function SampleModal() {
                 style={customStyles}
                 contentLabel="Example Modal"
               >
-                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello Modal{item}</h2>
+                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{characters[item].name}</h2>
+                <div>{characters[item].explanation}</div>
                 <button onClick={closeModal}>close</button>
-                <div>{selectedItem}</div>
-                <form>
+                {/* <form>
                   <input />
-                </form>
+                </form> */}
               </Modal>
             </>
           )
