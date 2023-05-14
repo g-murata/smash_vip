@@ -44,14 +44,10 @@ function SampleModal() {
 
   const [searchTerm, setSearchTerm] = useState("");
   const handleChange = (event) => {
-    const value = event.target.value;
-    setSearchTerm(value);
+    setSearchTerm(event.target.value);
   };
 
-  const filteredCharacters = Object.values(characters).filter((character) =>
-    character.name.includes(searchTerm)
-  );
-
+  const filteredCharacters = Object.values(characters).filter((character) => character.name.includes(searchTerm));
 
   return (
     < div >
@@ -69,6 +65,7 @@ function SampleModal() {
             <th>ファイター番号</th>
             <th>ファイター名</th>
             <th>説明</th>
+            <th>VIP入り</th>
           </tr>
         </thead>
         {
@@ -77,12 +74,14 @@ function SampleModal() {
               <>
                 <tbody>
                   <tr>
-                    <td onClick={() => { openModal(item) }}>{filteredCharacters[item].no}</td>
+                    <td>{filteredCharacters[item].no}</td>
                     <td>{filteredCharacters[item].name}</td>
                     <td>{filteredCharacters[item].explanation}</td>
+                    <td>{filteredCharacters[item].vip === true ? "○" : "✖️"}</td>
                     <td onClick={() => { openModal(item) }}>詳細</td>
                   </tr>
                 </tbody>
+
                 <Modal
                   isOpen={item === selectedItem}
                   onAfterOpen={afterOpenModal}
