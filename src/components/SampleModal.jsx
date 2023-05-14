@@ -64,7 +64,6 @@ function SampleModal() {
           <tr>
             <th>ファイター番号</th>
             <th>ファイター名</th>
-            <th>説明</th>
             <th>VIP入り</th>
           </tr>
         </thead>
@@ -76,7 +75,6 @@ function SampleModal() {
                   <tr>
                     <td>{filteredCharacters[item].no}</td>
                     <td>{filteredCharacters[item].name}</td>
-                    <td>{filteredCharacters[item].explanation}</td>
                     <td>{filteredCharacters[item].vip === true ? "○" : "✖️"}</td>
                     <td onClick={() => { openModal(item) }}>詳細</td>
                   </tr>
@@ -91,6 +89,7 @@ function SampleModal() {
                 >
                   <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{filteredCharacters[item].name}</h2>
                   <div>{filteredCharacters[item].explanation}</div>
+                  <div>{filteredCharacters[item].vip === true ? "VIP" : "まだVIPじゃない"}</div>
                   <button onClick={closeModal}>close</button>
                   {/* <form>
                   <input />
