@@ -44,29 +44,46 @@ function SampleModal() {
 
   return (
     <div>
-      {
-        Object.keys(characters).map((item) => {
-          return (
-            <>
-              <button onClick={() => { openModal(item) }}>{characters[item].name}</button>
-              <Modal
-                isOpen={item === selectedItem}
-                onAfterOpen={afterOpenModal}
-                onRequestClose={closeModal}
-                style={customStyles}
-                contentLabel="Example Modal"
-              >
-                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{characters[item].name}</h2>
-                <div>{characters[item].explanation}</div>
-                <button onClick={closeModal}>close</button>
-                {/* <form>
+      <table>
+        <thead>
+          <tr>
+            <th>ファイター番号</th>
+            <th>ファイター名</th>
+            <th>説明</th>
+          </tr>
+        </thead>
+        {
+          Object.keys(characters).map((item) => {
+            return (
+              <>
+                <tbody>
+                  <tr>
+                    <td onClick={() => { openModal(item) }}>{characters[item].no}</td>
+                    <td>{characters[item].name}</td>
+                    <td>{characters[item].explanation}</td>
+                    <td onClick={() => { openModal(item) }}>詳細</td>
+                  </tr>
+                </tbody>
+                <Modal
+                  isOpen={item === selectedItem}
+                  onAfterOpen={afterOpenModal}
+                  onRequestClose={closeModal}
+                  style={customStyles}
+                  contentLabel="Example Modal"
+                >
+                  <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{characters[item].name}</h2>
+                  <div>{characters[item].explanation}</div>
+                  <button onClick={closeModal}>close</button>
+                  {/* <form>
                   <input />
                 </form> */}
-              </Modal>
-            </>
-          )
-        })
-      }
+                </Modal>
+              </>
+            )
+          })
+        }
+      </table>
+
     </div>
   )
 }
