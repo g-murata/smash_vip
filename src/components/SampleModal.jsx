@@ -42,8 +42,27 @@ function SampleModal() {
     setSelectedItem(false)
   }
 
+  const [searchTerm, setSearchTerm] = useState("");
+  const handleChange = (event) => {
+    const value = event.target.value;
+    setSearchTerm(value);
+  };
+
+  const filteredCharacters = Object.values(characters).filter((character) =>
+    character.name.includes(searchTerm)
+  );
+
+
   return (
-    <div>
+    < div >
+      <input
+        className=""
+        type="text" autoFocus
+        placeholder="検索"
+        value={searchTerm}
+        onChange={handleChange}
+      />
+
       <table>
         <thead>
           <tr>
@@ -53,14 +72,14 @@ function SampleModal() {
           </tr>
         </thead>
         {
-          Object.keys(characters).map((item) => {
+          Object.keys(filteredCharacters).map((item) => {
             return (
               <>
                 <tbody>
                   <tr>
-                    <td onClick={() => { openModal(item) }}>{characters[item].no}</td>
-                    <td>{characters[item].name}</td>
-                    <td>{characters[item].explanation}</td>
+                    <td onClick={() => { openModal(item) }}>{filteredCharacters[item].no}</td>
+                    <td>{filteredCharacters[item].name}</td>
+                    <td>{filteredCharacters[item].explanation}</td>
                     <td onClick={() => { openModal(item) }}>詳細</td>
                   </tr>
                 </tbody>
@@ -71,8 +90,8 @@ function SampleModal() {
                   style={customStyles}
                   contentLabel="Example Modal"
                 >
-                  <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{characters[item].name}</h2>
-                  <div>{characters[item].explanation}</div>
+                  <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{filteredCharacters[item].name}</h2>
+                  <div>{filteredCharacters[item].explanation}</div>
                   <button onClick={closeModal}>close</button>
                   {/* <form>
                   <input />
@@ -84,7 +103,7 @@ function SampleModal() {
         }
       </table>
 
-    </div>
+    </div >
   )
 }
 
