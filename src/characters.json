@@ -2,48 +2,213 @@
   "data": {
     "0": {
       "id": 1,
+      "no": 1,
       "name": "マリオ",
-      "explanation": "ミスタービデオゲーム"
+      "explanation": "ミスター・ビデオゲーム",
+      "vip": true
     },
     "1": {
       "id": 2,
+      "no": 2,
       "name": "ドンキー",
-      "explanation": "ゴリラ"
+      "explanation": "ゴリラ",
+      "vip": true
     },
     "2": {
       "id": 3,
+      "no": 3,
       "name": "リンク",
-      "explanation": "英傑"
+      "explanation": "英傑",
+      "vip": true
     },
     "3": {
       "id": 4,
+      "no": 4,
       "name": "サムス",
-      "explanation": "陰キャ"
+      "explanation": "飛び道具",
+      "vip": true
     },
     "4": {
       "id": 5,
+      "no": "4'",
       "name": "ダムス",
-      "explanation": "厨二陰キャ"
+      "explanation": "飛び道具'",
+      "vip": true
     },
     "5": {
       "id": 6,
+      "no": 5,
       "name": "ヨッシー",
-      "explanation": "恐竜"
+      "explanation": "恐竜",
+      "vip": false
     },
     "6": {
       "id": 7,
+      "no": 6,
       "name": "カービィ",
-      "explanation": "筋肉だるま"
+      "explanation": "筋肉だるま",
+      "vip": true
     },
     "7": {
       "id": 8,
+      "no": 7,
       "name": "フォックス",
-      "explanation": "軽すぎ"
+      "explanation": "儚い",
+      "vip": false
     },
     "8": {
       "id": 9,
+      "no": 8,
       "name": "ピカチュウ",
-      "explanation": "電気ネズミ"
+      "explanation": "電気ネズミ",
+      "vip": false
+    },
+    "9": {
+      "id": 10,
+      "no": 9,
+      "name": "ルイージ",
+      "explanation": "即死コン",
+      "vip": true
+    },
+    "10": {
+      "id": 11,
+      "no": 10,
+      "name": "ネス",
+      "explanation": "PKファイヤー",
+      "vip": false
+    },
+    "11": {
+      "id": 12,
+      "no": 11,
+      "name": "キャプテン・ファルコン",
+      "explanation": "ファルコンパンチ",
+      "vip": true
+    },
+    "12": {
+      "id": 13,
+      "no": 12,
+      "name": "プリン",
+      "explanation": "軽い",
+      "vip": false
+    },
+    "13": {
+      "id": 14,
+      "no": 13,
+      "name": "ピーチ",
+      "explanation": "ハイチャァ",
+      "vip": false
+    },
+    "14": {
+      "id": 15,
+      "no": "13'",
+      "name": "デイジー",
+      "explanation": "ヨーオー",
+      "vip": false
+    },
+    "15": {
+      "id": 16,
+      "no": 14,
+      "name": "クッパ",
+      "explanation": "VIPに行きやすいキャラランキングNo.2",
+      "vip": true
+    },
+    "16": {
+      "id": 17,
+      "no": 15,
+      "name": "アイスクライマー",
+      "explanation": "ふたり",
+      "vip": false
+    },
+    "17": {
+      "id": 18,
+      "no": 16,
+      "name": "シーク",
+      "explanation": "アルセーヌがいないジョーカー",
+      "vip": false
+    },
+    "18": {
+      "id": 19,
+      "no": 17,
+      "name": "ゼルダ",
+      "explanation": "意外とパワーキャラ",
+      "vip": false
+    },
+    "19": {
+      "id": 20,
+      "no": 18,
+      "name": "ドクターマリオ",
+      "explanation": "力こそパワー",
+      "vip": true
+    },
+    "20": {
+      "id": 21,
+      "no": 19,
+      "name": "ピチュー",
+      "explanation": "メンヘラっぽい",
+      "vip": false
+    },
+    "21": {
+      "id": 22,
+      "no": 20,
+      "name": "ファルコ",
+      "explanation": "意外と軽い",
+      "vip": true
+    },
+    "22": {
+      "id": 23,
+      "no": 21,
+      "name": "マルス",
+      "explanation": "使えるようになると楽しい",
+      "vip": true
+    },
+    "23": {
+      "id": 24,
+      "no": "21'",
+      "name": "ルキナ",
+      "explanation": "マルスより全然使いやすい",
+      "vip": true
+    },
+    "24": {
+      "id": 25,
+      "no": 22,
+      "name": "こどもリンク",
+      "explanation": "飛び道具強い",
+      "vip": true
+    },
+    "25": {
+      "id": 26,
+      "no": 23,
+      "name": "ガノンドロフ",
+      "explanation": "強い人が使うと魔王に見える",
+      "vip": true
+    },
+    "26": {
+      "id": 27,
+      "no": 24,
+      "name": "ミュウツー",
+      "explanation": "逆襲",
+      "vip": false
+    },
+    "27": {
+      "id": 28,
+      "no": 25,
+      "name": "ロイ",
+      "explanation": "ガン攻め",
+      "vip": true
+    },
+    "28": {
+      "id": 29,
+      "no": "25'",
+      "name": "クロム",
+      "explanation": "復帰のクセが強い",
+      "vip": true
+    },
+    "29": {
+      "id": 30,
+      "no": 26,
+      "name": "Mr.ゲーム&ウォッチ",
+      "explanation": "全然使ったことないけど強そう",
+      "vip": false
     }
   }
 }
