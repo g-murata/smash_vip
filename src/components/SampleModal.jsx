@@ -55,17 +55,28 @@ function SampleModal() {
 
 
   const filteredCharacters = Object.values(characters).filter((character) => {
-    if (!searchTerm && selectedOption === '') return true;
-
     const nameFilter = character.name.includes(searchTerm)
-    const vipFilter = character.vip == JSON.parse(selectedOption)
 
-    return nameFilter && vipFilter
+    if (selectedOption === '') {
+      return nameFilter
+    } else {
+      const vipFilter = character.vip == JSON.parse(selectedOption)
+      return nameFilter && vipFilter
+    }
   })
 
 
   return (
     < div >
+      <label>
+        <input
+          type="radio"
+          value=""
+          checked={selectedOption === ''}
+          onChange={ladioChange}
+        />
+        all
+      </label>
       <label>
         <input
           type="radio"
@@ -84,12 +95,6 @@ function SampleModal() {
         />
         VIPじゃない
       </label>
-      <button onClick={() => {
-        setSelectedOption('');
-      }}>
-        リセット
-      </button>
-
       <input
         className=""
         type="text" autoFocus
@@ -97,6 +102,13 @@ function SampleModal() {
         value={searchTerm}
         onChange={handleChange}
       />
+      <button onClick={() => {
+        setSelectedOption('');
+        setSearchTerm('');
+      }}>
+        リセット
+      </button>
+
       <table>
         <thead>
           <tr>
