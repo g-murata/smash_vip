@@ -47,18 +47,56 @@ function SampleModal() {
     setSearchTerm(event.target.value);
   };
 
-  const filteredCharacters = Object.values(characters).filter((character) => character.name.includes(searchTerm));
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const ladioChange = (event) => {
+    setSelectedOption(event.target.value)
+  };
+
+
+  const filteredCharacters = Object.values(characters).filter((character) => {
+    if (!searchTerm && selectedOption === '') return true;
+
+    const nameFilter = character.name.includes(searchTerm)
+    const vipFilter = character.vip == JSON.parse(selectedOption)
+
+    return nameFilter && vipFilter
+  })
+
 
   return (
     < div >
+      <label>
+        <input
+          type="radio"
+          value="true"
+          checked={selectedOption === 'true'}
+          onChange={ladioChange}
+        />
+        VIP入り
+      </label>
+      <label>
+        <input
+          type="radio"
+          value="false"
+          checked={selectedOption === 'false'}
+          onChange={ladioChange}
+        />
+        VIPじゃない
+      </label>
+      <button onClick={() => {
+        setSelectedOption('');
+      }}>
+        リセット
+      </button>
+
       <input
         className=""
         type="text" autoFocus
-        placeholder="検索"
+        placeholder="ファイター名検索"
         value={searchTerm}
         onChange={handleChange}
       />
-
       <table>
         <thead>
           <tr>
