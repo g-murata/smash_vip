@@ -49,7 +49,7 @@ function SampleModal() {
 
   const [selectedOption, setSelectedOption] = useState("");
 
-  const ladioChange = (event) => {
+  const radioChange = (event) => {
     setSelectedOption(event.target.value)
   };
 
@@ -73,7 +73,7 @@ function SampleModal() {
           type="radio"
           value=""
           checked={selectedOption === ''}
-          onChange={ladioChange}
+          onChange={radioChange}
         />
         all
       </label>
@@ -82,7 +82,7 @@ function SampleModal() {
           type="radio"
           value="true"
           checked={selectedOption === 'true'}
-          onChange={ladioChange}
+          onChange={radioChange}
         />
         VIP入り
       </label>
@@ -91,7 +91,7 @@ function SampleModal() {
           type="radio"
           value="false"
           checked={selectedOption === 'false'}
-          onChange={ladioChange}
+          onChange={radioChange}
         />
         VIPじゃない
       </label>
